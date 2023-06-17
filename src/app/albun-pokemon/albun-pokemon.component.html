@@ -1,0 +1,60 @@
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">La API de Rick and Morty</h1>
+      <p class="lead text-muted"> Muestra todos los personajes de este dibujo animado muy popular </p>
+     
+    </div>
+  </div>
+</section>
+
+<div class="album py-5 bg-light" >
+   <div class="container">
+
+    <div class="container">
+      <div class="row">
+        <div class="col col-4 my-3"  *ngFor="let item of  personajes" > 
+          <!-- <img src="{{ item.image }}" alt="" srcset="" class="img-personaje bd-placeholder-img card-img-top" role="img" > -->
+          
+         
+              <div class="card shadow-sm" >
+              <!--   <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="{{item.image }}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>{{ item.name }}</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                <img src="{{ item.image }}" alt="" srcset="" class="img-personaje bd-placeholder-img card-img-top" role="img" >
+                <div class="card-body">
+                  <p class="card-text">{{item.name}}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
+                    </div>
+                    <small class="text-muted"> {{ item.gender }}</small>
+                  </div>
+                </div>
+              </div>
+                
+       
+        </div>
+      </div>
+    </div>
+
+   </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
